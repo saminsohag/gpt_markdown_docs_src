@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
+// import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
 
@@ -71,7 +71,7 @@ export function SiteHeader() {
                   <span className="sr-only">GitHub</span>
                 </a>
               </Button>
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="outline" size="icon" className="md:hidden">
