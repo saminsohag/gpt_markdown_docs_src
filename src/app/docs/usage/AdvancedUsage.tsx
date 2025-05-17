@@ -1,18 +1,8 @@
+import { CodeBlock } from "@/components/ui/components/ui/code-block";
 import React from "react";
 
 export function AdvancedUsage() {
-  return (
-    <div>
-      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">
-        Basic Configuration
-      </h2>
-      <p className="leading-7">
-        GPT Markdown provides several configuration options to customize its
-        behavior and appearance:
-      </p>
-      <div className="my-6 w-full overflow-y-auto rounded-md bg-slate-950 p-4">
-        <pre className="text-sm text-white">
-          <code>{`GPTMarkdown(
+  const basicConfigurationCode = `GPTMarkdown(
   // Required: The Markdown text to render
   markdownText: '# Your markdown content here',
   
@@ -40,21 +30,9 @@ export function AdvancedUsage() {
     // Handle link taps here
     launchUrl(Uri.parse(url));
   },
-)`}</code>
-        </pre>
-      </div>
+)`;
 
-      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">
-        Working with AI Content
-      </h2>
-      <p className="leading-7">
-        GPT Markdown is specially optimized for rendering content from AI models
-        like ChatGPT and Gemini. Here&apos;s how you might use it with
-        AI-generated content:
-      </p>
-      <div className="my-6 w-full overflow-y-auto rounded-md bg-slate-950 p-4">
-        <pre className="text-sm text-white">
-          <code>{`import 'package:flutter/material.dart';
+  const workingWithAICode = `import 'package:flutter/material.dart';
 import 'package:gpt_markdown/gpt_markdown.dart';
 import 'package:your_ai_service/ai_service.dart'; // Your AI service implementation
 
@@ -88,7 +66,7 @@ class _AIChatScreenState extends State<AIChatScreen> {
       });
     } catch (e) {
       setState(() {
-        _aiResponse = "Error: \$\{e.toString()}";
+        _aiResponse = "Error: \${e.toString()}";
         _loading = false;
       });
     }
@@ -140,20 +118,9 @@ class _AIChatScreenState extends State<AIChatScreen> {
       ),
     );
   }
-}`}</code>
-        </pre>
-      </div>
+}`;
 
-      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">
-        Dynamic Content
-      </h2>
-      <p className="leading-7">
-        You can update the markdown content dynamically. Here&apos;s an example
-        using a StatefulWidget:
-      </p>
-      <div className="my-6 w-full overflow-y-auto rounded-md bg-slate-950 p-4">
-        <pre className="text-sm text-white">
-          <code>{`import 'package:flutter/material.dart';
+  const dynamicContentCode = `import 'package:flutter/material.dart';
 import 'package:gpt_markdown/gpt_markdown.dart';
 
 class DynamicMarkdownDemo extends StatefulWidget {
@@ -211,7 +178,59 @@ class _DynamicMarkdownDemoState extends State<DynamicMarkdownDemo> {
       ),
     );
   }
-}`}</code>
+}`;
+
+  return (
+    <div>
+      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">
+        Basic Configuration
+      </h2>
+      <p className="leading-7">
+        GPT Markdown provides several configuration options to customize its
+        behavior and appearance:
+      </p>
+      <div className="my-6 w-full overflow-y-auto rounded-md p-4">
+        <pre className="text-sm text-white">
+          <CodeBlock
+            filename="basic_configuration.dart"
+            language="dart"
+            code={basicConfigurationCode}
+          />
+        </pre>
+      </div>
+
+      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">
+        Working with AI Content
+      </h2>
+      <p className="leading-7">
+        GPT Markdown is specially optimized for rendering content from AI models
+        like ChatGPT and Gemini. Here&apos;s how you might use it with
+        AI-generated content:
+      </p>
+      <div className="my-6 w-full overflow-y-auto rounded-md p-4">
+        <pre className="text-sm text-white">
+          <CodeBlock
+            filename="ai_content_example.dart"
+            language="dart"
+            code={workingWithAICode}
+          />
+        </pre>
+      </div>
+
+      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight">
+        Dynamic Content
+      </h2>
+      <p className="leading-7">
+        You can update the markdown content dynamically. Here&apos;s an example
+        using a StatefulWidget:
+      </p>
+      <div className="my-6 w-full overflow-y-auto rounded-md p-4">
+        <pre className="text-sm text-white">
+          <CodeBlock
+            filename="dynamic_content_example.dart"
+            language="dart"
+            code={dynamicContentCode}
+          />
         </pre>
       </div>
     </div>
