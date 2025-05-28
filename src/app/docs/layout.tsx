@@ -37,11 +37,7 @@ const sidebarNavItems = [
     title: "Style Configuration",
     href: "/docs/style-configuration",
   },
-  {
-    title: "API Reference",
-    href: "/docs/api-reference",
-    section: "API",
-  },
+  
 ];
 
 export default function DocsLayout({
