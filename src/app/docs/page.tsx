@@ -1,8 +1,9 @@
+import { CodeBlock } from "@/components/ui/components/ui/code-block";
 import React from "react";
 
 const DocsPage = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8 bg-gray-900 min-h-screen">
+    <div className="max-w-4xl mx-auto px-4 py-8 min-h-screen">
       {/* Header Section */}
       <div className="mb-8">
         <h1 className="text-4xl font-bold mb-4 text-white">
@@ -49,9 +50,11 @@ const DocsPage = () => {
           🚀 Installation
         </h2>
         <div className="bg-gray-800 p-4 rounded-lg border border-gray-700">
-          <code className="text-sm text-green-400">
-            flutter pub add gpt_markdown
-          </code>
+          <CodeBlock
+            language="bash"
+            code="flutter pub add gpt_markdown"
+            filename="terminal"
+          />
         </div>
       </section>
 
